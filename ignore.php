@@ -3,7 +3,7 @@
 /**
  * List of files that will be ignored by the parser
  */
-$ignoreFiles = array(
+$ignoreFiles = [
     'function.require.html',
     'xmlreader.installation.html',
     'xmlreader.setup.html',
@@ -64,6 +64,6 @@ $ignoreFiles = array(
     'pdo.constants.html',
     //'control-structures.alternative-syntax.html',
     //'control-structures.intro.html',
-);
+];
 
 $ignoreFiles = array_combine($ignoreFiles, array_fill(0, count($ignoreFiles), true));

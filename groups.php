@@ -1,6 +1,7 @@
 <?php
 
-function get_classes($dir) {
+function get_classes($dir)
+{
     $files = [];
 
     foreach (glob($dir . '/class.*') as $file) {
