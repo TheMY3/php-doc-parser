@@ -1,5 +1,11 @@
 # PHP Documentation Parser
 
+## Example
+
+```bash
+php parser.php --include-examples php_manual_pt_BR/php-chunked-xhtml output/pt_BR
+```
+
 This is a standalone script that takes entire PHP documentation in "many HTML files" version and generates single JSON file with all standard classes and functions.
 
 ## Try it
