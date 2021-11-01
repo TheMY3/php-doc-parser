@@ -17,7 +17,7 @@ By the way, at the bottom of this page there's parsed `str_replace` function in 
 ## Usage
 
   1. **Download documentation**  
-     Choose language you prefer, download "Many HTML files" documetation from http://php.net/download-docs.php and unpack it wherever you want.
+     Choose language you prefer, download "Many HTML files" documentation from [php.net](http://php.net/download-docs.php) and unpack it wherever you want.
 
   2. **Run the parser script:**
 

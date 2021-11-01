@@ -83,7 +83,7 @@ $functionsCount = 0;
 // Array with all classes
 $classes = [];
 
-// This array is used only to generated 
+// This array is used only to generated
 $functionsNames = [];
 
 $allowed_class_groups = get_classes($dir);
@@ -147,6 +147,8 @@ if ($handle = opendir($dir)) {
         $version = $xpath->query('//p[@class="verinfo"]');
         if ($version->length > 0) { // check from which PHP version is it available
             $function['ver'] = trim($version->item(0)->textContent, '()');
+            // Remove all before PHP 4
+            $function['ver'] = preg_replace('/.+PHP 5/i', 'PHP 5', $function['ver']);
         } else {
             $function['ver'] = null;
         }
@@ -217,8 +219,7 @@ if ($handle = opendir($dir)) {
             // parameter containers
             $params = $xpath->query('span[@class="methodparam"]', $description);
             // skip empty parameter list (function declaration that doesn't take any parameter)
-            if (/*$params->length != 1 && */
-                $params->item(0)->textContent != 'void') {
+            if ($params->length > 1 && $params->item(0)->textContent != 'void') {
                 $optional          = substr_count($description->textContent, '[');
                 $paramDescriptions = $xpath->query('//div[contains(@class,"parameters")]//dd');
 
